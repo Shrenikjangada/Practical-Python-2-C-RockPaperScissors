@@ -1,0 +1,89 @@
+#include <iostream>
+#include <cstdlib>
+#include <limits>
+#include <ctime>
+
+
+using namespace std;
+
+
+int main()
+{
+    const int ROCK = 1;
+    const int PAPER = 2;
+    const int SCISSORS = 3;
+    int choice;
+    int random;
+    bool check = true;
+    while (check == true) {
+        cout << "\nWelcome to Rock, Paper, Scissors\n";
+        cout << "Here are the choices.\n\n";
+        cout << "1. Rock\n";
+        cout << "2. Paper\n";
+        cout << "3. Scissors\n";
+        cout << "4. Exit.\n\n";
+        cout << "Please enter your choice.";
+        cin >> choice;
+        if (choice == 4) {
+            check = false;
+        }
+        if (choice > 4) {
+            cout << "Inavlid number\n";
+        }
+        srand(time(NULL));
+        int random = rand() % 3 + 1;
+
+        if (choice == ROCK && random == PAPER) {
+            cout << "\nYou chose Rock.\n";
+            cout << "Computer chose Paper.\n";
+            cout << "\nYour choice loses.\n";
+        }
+        else if (choice == PAPER && random == SCISSORS) {
+            cout << "\nYou chose Paper.\n";
+            cout << "Computer chose Scissors.\n";
+            cout << "\nYour choice loses.\n";
+        }
+        else if (choice == SCISSORS && random == ROCK) {
+            cout << "\nYou chose Scissors.\n";
+            cout << "Computer chose Rock.\n";
+            cout << "\nYour choice loses.\n";
+        }
+        else if (choice == ROCK && random == SCISSORS) {
+            cout << "\nYou chose Rock.\n";
+            cout << "Computer chose Scissors.\n";
+            cout << "\nYour choice wins.\n";
+        }
+        else if (choice == PAPER && random == ROCK) {
+            cout << "\nYou chose Paper.\n";
+            cout << "Computer chose Rock.\n";
+            cout << "\nYour choice wins.\n";
+        }
+        else if (choice == SCISSORS && random == PAPER) {
+            cout << "\nYou chose Scissors.\n";
+            cout << "Computer chose Paper.\n";
+            cout << "\nYour choice wins.\n";
+        }
+        else if (choice == ROCK && random == ROCK) {
+            cout << "\nYou chose Rock.\n";
+            cout << "Computer chose Rock.\n";
+            cout << "\nTie.\n";
+        }
+        else if (choice == PAPER && random == PAPER) {
+            cout << "\nYou chose Paper.\n";
+            cout << "Computer chose Paper.\n";
+            cout << "\nTie.\n";
+        }
+        else if (choice == SCISSORS && random == SCISSORS) {
+            cout << "\nYou chose Scissors.\n";
+            cout << "Computer chose Scissors.\n";
+            cout << "\nTie.\n";
+        }
+        
+        
+    }
+
+    
+    
+
+    
+}
